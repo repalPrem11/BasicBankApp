@@ -32,6 +32,8 @@ public class Transaction extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transaction);
 
+        getSupportActionBar().hide();
+
         senderImage = findViewById(R.id.SenderImage);
         senderName = findViewById(R.id.SenderName);
         senderAccno = findViewById(R.id.SenderAccount);
@@ -104,7 +106,7 @@ public class Transaction extends AppCompatActivity {
             AlertDialog alertDialog = new AlertDialog.Builder(Transaction.this).create();
             alertDialog.setTitle("Error");
             alertDialog.setIcon(R.drawable.ic_baseline_error_24 );
-            alertDialog.setMessage("Please Enter a Amount");
+            alertDialog.setMessage("Please enter amount");
             alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
@@ -117,7 +119,7 @@ public class Transaction extends AppCompatActivity {
             AlertDialog alertDialog = new AlertDialog.Builder(Transaction.this).create();
             alertDialog.setTitle("Insufficient Balance");
             alertDialog.setIcon(R.drawable.ic_baseline_error_24 );
-            alertDialog.setMessage("You Dont Have Enough Money.");
+            alertDialog.setMessage("Oops! its looking like you don't have enough money");
             alertDialog.setCancelable(true);
             alertDialog.setCanceledOnTouchOutside(true);
             alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
@@ -144,7 +146,7 @@ public class Transaction extends AppCompatActivity {
 
             boolean result = new Database(this).insertTransferData(Transaction_id,formattedDate, SenderId,ReceiverId,amount,"Successful");
             if (result == true){
-                Toast.makeText(this, "SuccessFul", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Payment SuccessFul", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(Transaction.this, Payment_Receipt.class);
                 intent.putExtra("TransactionID", Transaction_id);
                 intent.putExtra("PaymentStatus", "Successful");

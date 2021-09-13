@@ -34,7 +34,7 @@ public class PassBook extends AppCompatActivity {
         rowShow(id);
         adapter.ID = id;
 
-        getSupportActionBar().setTitle("Passbook");
+        getSupportActionBar().setTitle("History");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

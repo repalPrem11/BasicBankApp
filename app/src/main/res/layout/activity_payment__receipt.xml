@@ -10,34 +10,34 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="#FFD700"
     android:gravity="center_horizontal">
     <ImageView
         android:id="@+id/iv_success"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="10dp"
-        app:srcCompat="@drawable/ic_baseline_done_outline_24"
-        android:background="@drawable/successful_background"
+
+        android:background="@drawable/success"
         />
     <ImageView
         android:id="@+id/iv_failed"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="10dp"
-        app:srcCompat="@drawable/ic_baseline_clear_24"
-        android:background="@drawable/failed_background"
+        android:background="@drawable/fail"
         android:visibility="gone"
         />
     <TextView
         android:id="@+id/paymentstatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Payment Successful..!!"
+        android:text="Transaction Successful..!!"
         android:textSize="25dp"
         android:layout_margin="10dp"
         android:textStyle="bold"
         android:fontFamily="sans-serif-light"
-        android:textColor="@android:color/holo_green_dark"/>
+        android:textColor="@color/purple_700"/>
 </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -46,7 +46,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/ll"
         android:layout_margin="20dp"
-        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="@color/purple_700"
+        app:cardCornerRadius="20dp"
         app:cardElevation="5dp">
 
         <LinearLayout
@@ -59,8 +60,9 @@
                 android:text="Payment Receipt"
                 android:textAllCaps="true"
                 android:textSize="20sp"
+                android:textAlignment="center"
                 android:textStyle="bold"
-                android:textColor="@color/color_two"
+                android:textColor="@color/white"
                 android:layout_marginLeft="25dp"
                 android:layout_marginTop="20sp"/>
 
@@ -82,6 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
+                    android:textColor="@color/white"
                     android:text="Transaction Id"
                     android:textSize="18sp"/>
                 <TextView
@@ -89,6 +92,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:text="TransID"
+
                     android:textAlignment="textEnd"
                     android:textSize="15sp"
                     android:textColor="@color/color_one"
@@ -115,6 +119,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:text="Sender Acc no."
+                    android:textColor="@color/white"
                     android:textSize="18sp"/>
                 <TextView
                     android:id="@+id/tv_sender_account"
@@ -147,6 +152,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:text="Receiver Acc no"
+                    android:textColor="@color/white"
                     android:textSize="18sp"/>
                 <TextView
                     android:id="@+id/tv_receiver_account"
@@ -179,6 +185,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:text="Amount"
+                    android:textColor="@color/white"
                     android:textSize="18sp"/>
                 <TextView
                     android:id="@+id/tv_amount"
@@ -211,6 +218,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:text="Date / Time"
+                    android:textColor="@color/white"
                     android:textSize="18sp"/>
                 <TextView
                     android:id="@+id/tv_date_time"
@@ -244,6 +252,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:text="Payment Status"
+                    android:textColor="@color/white"
                     android:textSize="18sp"/>
                 <TextView
                     android:id="@+id/tv_status"
@@ -252,21 +261,17 @@
                     android:text="status"
                     android:textAlignment="textEnd"
                     android:textSize="15sp"
-                    android:textColor="@android:color/holo_green_dark"
+                    android:textColor="#FFD700"
                     android:textStyle="bold"
                     android:fontFamily="sans-serif-light"
                     android:layout_alignParentRight="true"/>
             </RelativeLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/color_two"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                />
+
 
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+
 </RelativeLayout>

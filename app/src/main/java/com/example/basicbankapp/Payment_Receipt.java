@@ -2,6 +2,7 @@ package com.example.basicbankapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import android.widget.Toast;
 public class Payment_Receipt extends AppCompatActivity {
 
 
-    TextView transId,senderAcc,receiverAcc,amount,date,status;
+    TextView transId,senderAcc,receiverAcc,amount,date,status,passbooktv;
     ImageView success,failed;
     TextView paymentStatus;
     String TransactionID, pystatus;
@@ -32,6 +33,9 @@ public class Payment_Receipt extends AppCompatActivity {
         success = findViewById(R.id.iv_success);
         failed = findViewById(R.id.iv_failed);
         paymentStatus = findViewById(R.id.paymentstatus);
+
+
+
 
         TransactionID = getIntent().getExtras().getString("TransactionID");
         pystatus = getIntent().getExtras().getString("PaymentStatus");
